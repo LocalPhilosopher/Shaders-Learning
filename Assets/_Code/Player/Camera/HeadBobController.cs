@@ -14,7 +14,7 @@ namespace Code.Player.Camera
         [SerializeField, Range(0, 30f)] private float frequency = 10.0f;
 
         [SerializeField] private Transform camera;
-        [SerializeField] private SoundData stepSound;
+        // [SerializeField] private SoundData stepSound;
         private bool left;
         float time;
 
@@ -49,12 +49,12 @@ namespace Code.Player.Camera
             if (pos.y > 0 && left)
             {
                 left = false;
-                SoundManager.Instance.Play(stepSound);
+                // SoundManager.Instance.Play(stepSound);
             }
             else if (pos.y < 0 && !left)
             {
                 left = true;
-                SoundManager.Instance.Play(stepSound);
+                // SoundManager.Instance.Play(stepSound);
             }
             return pos;
         }

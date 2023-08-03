@@ -26,6 +26,12 @@ namespace Code
         public InputState CurInputState => inputState;
 
 
+        private void Awake()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
         public Vector2 GetMoveDirection()
         {
             // if (inputState == InputState.Mobile)

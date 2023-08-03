@@ -46,8 +46,8 @@ namespace _Code.Player
         private void Update()
         {
             Movement();
-            // Jump();
-            // CheckInteractive();
+            Jump();
+            CheckInteractive();
         }
 
         private bool hitted = false;
@@ -79,8 +79,8 @@ namespace _Code.Player
             float x;
             float z;
 
-            if (isDead)
-                return;
+            // if (isDead)
+            //     return;
             x = InputHandler.Instance.GetMoveDirection().x;
             z = InputHandler.Instance.GetMoveDirection().y;
 

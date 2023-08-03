@@ -12,13 +12,16 @@ namespace Code.Player.Camera
         [SerializeField] private Vector2 angleLimitX;
         float xRotation;
         
-        private void LateUpdate()
+        private void Update()
         {
-            if (PlayerController.Instance.IsDead)
-                return;
+            // if (PlayerController.Instance.IsDead)
+            //     return;
             Vector2 mouseDirection = InputHandler.Instance.GetLookRotation();
-            float mouseX = mouseDirection.x * InputHandler.Instance.GetSensitivity() * Time.deltaTime;
-            float mouseY = mouseDirection.y * InputHandler.Instance.GetSensitivity() * Time.deltaTime;
+
+            // Debug.Log("delta time " + Time.deltaTime);
+            // Debug.Log("fixed delta time " + Time.fixedDeltaTime);
+            float mouseX = mouseDirection.x * InputHandler.Instance.GetSensitivity() * Time.fixedDeltaTime;
+            float mouseY = mouseDirection.y * InputHandler.Instance.GetSensitivity() * Time.fixedDeltaTime;
         
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, angleLimitX.x, angleLimitX.y);
@@ -26,13 +29,13 @@ namespace Code.Player.Camera
             playerBody.Rotate(Vector3.up * mouseX);
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Z))
-            {
-                LookAt(null, 0);
-            }
-        }
+        // private void Update()
+        // {
+        //     if (Input.GetKeyDown(KeyCode.Z))
+        //     {
+        //         LookAt(null, 0);
+        //     }
+        // }
 
         public void LookAt(Transform target, float time, Action callback = null)
         {
