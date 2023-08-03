@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBody: {fileID: 7974808712772780192}
-  angleLimitX: {x: -45, y: 45}
+  angleLimitX: {x: -70, y: 70}
 --- !u!1 &7974808712538416881
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +362,7 @@ Transform:
   - {fileID: 7974808712397661958}
   - {fileID: 7974808712382123619}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &7974808712772780189
 CharacterController:

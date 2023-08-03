@@ -25,7 +25,7 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _IntersectPower: 6
+    - _IntersectPower: 2
     m_Colors:
     - _BaseColor: {r: 0.3061765, g: 0.9716981, b: 0.6167533, a: 1}
     - _IntersectColor: {r: 0.9102179, g: 0.32549024, b: 1, a: 1}

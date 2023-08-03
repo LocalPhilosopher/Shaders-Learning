@@ -112,8 +112,10 @@ namespace _Code.Player
             isGrounded = UnityEngine.Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
             if (isGrounded && velocity.y < 0)
-                velocity.y = -2;
+                velocity.y = gravity/2;
             velocity.y += gravity * Time.deltaTime;
+            if (Input.GetButton("Jump") && isGrounded)
+                velocity.y = Mathf.Sqrt(jumpHeight  * -gravity);
             character.Move(velocity * Time.deltaTime);
         }
     }
