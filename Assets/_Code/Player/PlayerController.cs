@@ -114,8 +114,8 @@ namespace _Code.Player
             if (isGrounded && velocity.y < 0)
                 velocity.y = gravity/2;
             velocity.y += gravity * Time.deltaTime;
-            if (Input.GetButton("Jump") && isGrounded)
-                velocity.y = Mathf.Sqrt(jumpHeight  * -gravity);
+            if (Input.GetButtonDown("Jump") && isGrounded)
+                velocity.y += jumpHeight;
             character.Move(velocity * Time.deltaTime);
         }
     }

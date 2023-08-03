@@ -362,7 +362,7 @@ Transform:
   - {fileID: 7974808712397661958}
   - {fileID: 7974808712382123619}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &7974808712772780189
 CharacterController:
@@ -432,13 +432,13 @@ MonoBehaviour:
   mouseLook: {fileID: 7974808713673904398}
   moveSpeed: 5
   gravity: -9.81
-  jumpHeight: 3
+  jumpHeight: 12
   velocity: {x: 0, y: 0, z: 0}
   groundDistance: 0.4
   groundCheck: {fileID: 7974808712382123619}
   groundMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 64
   cameraController: {fileID: 7974808712397661957}
   isDead: 0
 --- !u!114 &7974808712772780187
