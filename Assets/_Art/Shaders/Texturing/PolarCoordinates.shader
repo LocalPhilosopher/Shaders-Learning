@@ -61,8 +61,8 @@ Shader "Examples/PolarCoordinates"
             float4 frag (v2f i) : SV_Target
             {
                 float2 radialUV = cartesianToPolar(i.uv);
-                radialUV.x *= _RadialScale ;
-                radialUV.y *= _LengthScale;
+                radialUV.x *= _RadialScale;
+                radialUV.y *= sin(_LengthScale* _Time.y);
                 float4 col = tex2D(_MainTex, radialUV);
                 return col;
             }

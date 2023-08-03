@@ -42,8 +42,8 @@ Shader "Examples/UVRotation"
 
             v2f vert(appdata v)
             {
-                float c = cos(_Rotation);
-                float s = sin(_Rotation);
+                float c = cos(_Rotation + _Time.y);
+                float s = sin(_Rotation + _Time.y);
                 float2x2 rotMatrix = float2x2(c,-s,s,c);
                 v2f o;
                 o.positionCS = TransformObjectToHClip(v.positionOS);

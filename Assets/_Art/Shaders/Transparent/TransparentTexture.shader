@@ -1,15 +1,20 @@
-Shader "Examples/TextureExample"
+Shader "Examples/TransparentTexture"
 {
     Properties
     {
         _BaseColor("Base Color", Color) = (1,1,1,1)
         _BaseTex("Base Texture", 2D) = "white"
+        [Enum(UnityEngine.Rendering.BlendMode)]
+        _SrcBlend("Source Blend Factor", Int) = 1
+        [Enum(UnityEngine.Rendering.BlendMode)]
+        _DstBlend("Destination Blend Factor", Int) = 1
     }
     SubShader
     {
-        Tags{"RenderType" = "Opaque" "Queue" = "Geometry" "RenderPipeline" = "UniversalPipeline"}
+        Tags{"RenderType" = "Transparent" "Queue" = "Transparent" "RenderPipeline" = "UniversalPipeline"}
         Pass
         {
+            Blend [_SrcBlend] [_DstBlend]
             Tags{"LightMode" = "UniversalForward"}
             HLSLPROGRAM
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"

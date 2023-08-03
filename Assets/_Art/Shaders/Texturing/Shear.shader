@@ -47,8 +47,8 @@ Shader "Example/Shear"
             {
                 float2x2 shearMatrix = float2x2
                 (
-                    1, -_Shear.x,
-                    -_Shear.y, 1
+                    1, -_Shear.x + sin(_Time.y),
+                    -_Shear.y+ cos(_Time.y), 1
                 );
                 v2f o;
                 o.positionCS = TransformObjectToHClip(v.positionOS);
